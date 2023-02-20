@@ -2,6 +2,7 @@ const dotenv = require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
+const dayjs = require("dayjs");
 const sendEmailCustomer = require("./utils/sendEmailCustomer.js");
 const sendEmailCompany = require("./utils/sendEmailCompany.js");
 const app = express();
@@ -28,6 +29,9 @@ app.post("/api/sendemail", async (req, res) => {
     returnTime,
     pickupLocation,
   } = req.body;
+
+  const rentDays = dayjs(returnDate).diff(dayjs(pickupDate), "day");
+
   try {
     const send_to_service = process.env.EMAIL_USER;
     const send_to = email;
@@ -41,6 +45,7 @@ app.post("/api/sendemail", async (req, res) => {
         <p>Car Inquiry from ${name}</p>
         <p>Pickup-Date: ${pickupDate} at ${pickupTime} and return-Date: ${returnDate} at ${returnTime}</p>
         <p>Pickup from ${pickupLocation}</p>
+		<p>Total Days: ${rentDays}</p>
       </div>
     
     `;
@@ -350,6 +355,7 @@ width="560" style="border-collapse: collapse; border-spacing: 0; padding: 0;widt
     res.status(200).json({ success: true, message: "Email Sent" });
   } catch (err) {
     res.status(500).json(err.message);
+    console.log(err.message);
   }
 });
 
