@@ -1,0 +1,26 @@
+{
+  "name": "tinosmiles.gr",
+  "version": "1.0.0",
+  "description": "Car-Rental Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "keywords": [
+    "car",
+    "rental",
+    "Tinos",
+    "island",
+    "service"
+  ],
+  "author": "Th.Xilos",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "nodemailer": "^6.9.1"
+  }
+}
