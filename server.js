@@ -16,7 +16,7 @@ app.use(cors());
 //create route
 
 app.get("/", (req, res) => {
-  res.send("Server is up");
+  res.send(`TinosMiles Service Running ${new Date()}`);
 });
 
 app.post("/api/sendemail", async (req, res) => {
