@@ -43,10 +43,13 @@ app.post("/api/sendemail", async (req, res) => {
     const message_service = `
       <div style="display:flex; flex-direction:column; gap:10px; font-size:16px">
         <p>Car Inquiry from ${name}</p>
-        <p>Pickup-Date: ${pickupDate} at ${pickupTime} and return-Date: ${returnDate} at ${returnTime}</p>
+        <p>Pickup-Date: ${pickupDate} at ${pickupTime}</p>
+		<p>Return-Date: ${returnDate} at ${returnTime}</p>
         <p>Pickup from ${pickupLocation}</p>
 		<p>Total Days: ${rentDays}</p>
-      </div>
+		<p>Total Cost: ${rentDays > 10 ? rentDays * 50 * 0.85 : rentDays * 50}
+		<p>${rentDays > 10 && "Discount is applied"}</p>
+	 </div>
     
     `;
     const message = `
