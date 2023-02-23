@@ -47,7 +47,7 @@ app.post("/api/sendemail", async (req, res) => {
 		<p>Return-Date: ${returnDate} at ${returnTime}</p>
         <p>Pickup from ${pickupLocation}</p>
 		<p>Total Days: ${rentDays}</p>
-		<p>Total Cost: ${rentDays > 10 ? rentDays * 50 * 0.85 : rentDays * 50}
+		<p>Total Cost: ${rentDays > 10 ? rentDays * 50 * 0.85 : rentDays * 50}</p>
 		<p>${rentDays > 10 && "Discount is applied"}</p>
 	 </div>
     
