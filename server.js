@@ -51,9 +51,13 @@ app.post("/api/sendemail", async (req, res) => {
         <p>Pickup from ${pickupLocation}</p>
 		<p>Total Days: ${rentDays}</p>
 		<p>Total Cost:</p> 
-		<p>High Season Total ${discountApplied ? highSeason : highSeason * 0.1}</p>
-		<p>Low Season Total ${discountApplied ? lowSeason : lowSeason * 0.1}</p>
-		<p>${discountApplied > 10 && " 10% Discount is applied"}</p>
+		<p>High Season Total ${discountApplied ? highSeason : highSeason * 0.9}</p>
+		<p>Low Season Total ${discountApplied ? lowSeason : lowSeason * 0.9}</p>
+		<p>${
+      discountApplied > 10
+        ? "10% Discount is applied"
+        : "Discount is not applied"
+    }</p>
 	 </div>
     
     `;
