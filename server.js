@@ -31,6 +31,9 @@ app.post("/api/sendemail", async (req, res) => {
   } = req.body;
 
   const rentDays = dayjs(returnDate).diff(dayjs(pickupDate), "day");
+  const highSeason = rentDays * 50;
+  const lowSeason = rentDays * 40;
+  const discountApplied = rentDays > 10;
 
   try {
     const send_to_service = process.env.EMAIL_USER;
@@ -47,8 +50,10 @@ app.post("/api/sendemail", async (req, res) => {
 		<p>Return-Date: ${returnDate} at ${returnTime}</p>
         <p>Pickup from ${pickupLocation}</p>
 		<p>Total Days: ${rentDays}</p>
-		<p>Total Cost: ${rentDays > 10 ? rentDays * 50 * 0.85 : rentDays * 50}</p>
-		<p>${rentDays > 10 && "Discount is applied"}</p>
+		<p>Total Cost:</p> 
+		<p>High Season Total ${discountApplied ? highSeason : highSeason * 0.1}</p>
+		<p>Low Season Total ${discountApplied ? lowSeason : lowSeason * 0.1}</p>
+		<p>${discountApplied > 10 && " 10% Discount is applied"}</p>
 	 </div>
     
     `;
@@ -112,9 +117,9 @@ width="560" style="border-collapse: collapse; border-spacing: 0; padding: 0;widt
     <td style="border-radius:10px 10px 0 0;background-color:#6ac1b7;padding:5px 0;">
             <a target="_blank" style="text-decoration: none;"
 				href="https://www.tinosmiles.gr"><img border="0" vspace="0" hspace="0"
-				src="/images/tinosmiles_logo_site_400x100.png"
+				src="https://res.cloudinary.com/dtekdjcan/image/upload/v1677076389/tinosmiles.gr/tinosmiles_logo_site_400x100_lwb09n.png"
 				width="400" height="100"
-				alt="Logo" title="Logo" style="
+				alt="tinos miles logo" title="Logo" style="
 				color: #000000;
 				font-size: 10px; margin: 0; padding: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; border: none; display: block;" /></a>
 
