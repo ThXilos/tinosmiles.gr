@@ -48,12 +48,26 @@ app.post("/api/sendemail", async (req, res) => {
 	<title>Request from Tinos Miles contact form</title>
 	</head>
 	<body>
-	<h2>Request from: <bold>${name}</bold></h2>
-	<p>Pick-up <bold>${pickupDate}</bold>  || Drop-off <bold>${returnDate}</bold></p>
-	<p>Total days: <bold>${rentDays}</bold> </p>
-	<p>${discountApplied ? "<bold>10% discount applies</bold>" : "No discount"}</p>
-	<p>Final cost for low season at 40e/day : <bold>${lowSeason}</bold></p>
-	<p>Final cost for high season at 50e/day : <bold>${highSeason}</bold></p>
+	<h2>Request from: <strong>${name}</strong></h2>
+	<p>Pick-up <strong>${pickupDate}</strong>  || Drop-off <strong>${returnDate}</strong></p>
+	<p>Total days: <strong>${rentDays}</strong> </p>
+	<p>${
+    discountApplied ? "<strong>10% discount applies</strong>" : "No discount"
+  }</p>
+	<p>Final cost for low season at 40e/day : ${
+    discountApplied
+      ? `<span style=" text-decoration: line-through;">${lowSeason}</span> <strong>${
+          lowSeason * 0.9
+        }</strong>`
+      : `<strong>${lowSeason}</strong>`
+  }</p>
+	<p>Final cost for high season at 50e/day :  ${
+    discountApplied
+      ? `<span style=" text-decoration: line-through;">${highSeason}</span> <strong>${
+          highSeason * 0.9
+        }</strong>`
+      : `<strong>${highSeason}</strong>`
+  }</p>
 	</body>
 	</html>
 	`;
@@ -196,7 +210,7 @@ width="560" style="border-collapse: collapse; border-spacing: 0; padding: 0;widt
 			padding-bottom: 5px;" class="button"><a
 			href="#" target="_blank" style="text-decoration: underline;">
 				<table border="0" cellpadding="0" cellspacing="0" align="center" style="max-width: 240px; min-width: 120px; border-collapse: collapse; border-spacing: 0; padding: 0;"><tr><td align="center" valign="middle" style="padding: 12px 24px; margin: 0; text-decoration: underline; border-collapse: collapse; border-spacing: 0; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px;"
-					bgcolor="#E9703E"><a target="_blank" style="text-decoration: underline;
+					bgcolor="#E9703E"><a target="_blank" style="text-decoration: none;
 					color: #FFFFFF; font-family: sans-serif; font-size: 17px; font-weight: 400; line-height: 120%;"
 					href="https://www.tinosmiles.gr/tinos-miles/guide-to-tinos-island/">
 						Guide to Tinos
