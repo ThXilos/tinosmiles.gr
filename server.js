@@ -55,6 +55,7 @@ app.post("/api/sendemail", async (req, res) => {
 	<body>
 	<h2>Request from: <strong>${name}</strong></h2>
 	<p>Pick-up <strong>${pickupDate}</strong>  || Drop-off <strong>${returnDate}</strong></p>
+	<p>Location <strong>${pickupLocation}</strong></p>
 	<p>Total days: <strong>${rentDays}</strong> </p>
 	<p>${
     discountApplied ? "<strong>10% discount applies</strong>" : "No discount"
