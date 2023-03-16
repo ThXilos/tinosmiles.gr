@@ -30,7 +30,12 @@ app.post("/api/sendemail", async (req, res) => {
     pickupLocation,
   } = req.body;
 
-  const rentDays = dayjs(returnDate).diff(dayjs(pickupDate), "day");
+  let rentDays;
+  rentDays = dayjs(returnDate).diff(dayjs(pickupDate), "day");
+  if (!rentDays) {
+    rentDays = 1;
+  }
+
   const highSeason = rentDays * 50;
   const lowSeason = rentDays * 40;
   const discountApplied = rentDays > 10;
@@ -165,7 +170,7 @@ width="560" style="border-collapse: collapse; border-spacing: 0; padding: 0;widt
 			font-family: sans-serif;" class="subheader">
          <li style="margin-bottom:1em">Pick-up Location: <span style="font-weight:bold;">${pickupLocation}</span></li>
  <li style="margin-bottom:1em">Pick-up Date/Time:<span style="font-weight:bold;"> ${pickupDate}</span> at <span style="font-weight:bold;">${pickupTime}</span></li>
- <li style="margin-bottom:1em">Return Date/Time:<span style="font-weight:bold;"> ${returnDate}</span> at<span style="font-weight:bold;">${returnTime}</span></li>
+ <li style="margin-bottom:1em">Return Date/Time:<span style="font-weight:bold;"> ${returnDate}</span> at <span style="font-weight:bold;">${returnTime}</span></li>
 </ul>
 		</td>
 	</tr>
