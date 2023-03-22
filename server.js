@@ -218,7 +218,7 @@ width="560" style="border-collapse: collapse; border-spacing: 0; padding: 0;widt
 				<table border="0" cellpadding="0" cellspacing="0" align="center" style="max-width: 240px; min-width: 120px; border-collapse: collapse; border-spacing: 0; padding: 0;"><tr><td align="center" valign="middle" style="padding: 12px 24px; margin: 0; text-decoration: underline; border-collapse: collapse; border-spacing: 0; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px;"
 					bgcolor="#E9703E"><a target="_blank" style="text-decoration: none;
 					color: #FFFFFF; font-family: sans-serif; font-size: 17px; font-weight: 400; line-height: 120%;"
-					href="https://www.tinosmiles.gr/tinos-miles/guide-to-tinos-island/">
+					href="https://tinosmiles.gr/tinos-island-guide">
 						Guide to Tinos
 					</a>
 			</td></tr></table></a>
@@ -284,7 +284,7 @@ width="560" style="border-collapse: collapse; border-spacing: 0; padding: 0;widt
 					padding-top: 25px;
 					color: #000000;
 					font-family: sans-serif;" class="paragraph">
-						<a href="https://www.tinosmiles.gr/tinos-miles/covid-19/" target="_blank" style="text-decoration:none"><b style="color: #333333;">Our responce to the covid-19</b></a><br/>
+						<a href="https://tinosmiles.gr/safety" target="_blank" style="text-decoration:none"><b style="color: #333333;">Our responce to the covid-19</b></a><br/>
 						Find out more on how we take measures to assure your safety and those around you.
 				</td>
 
