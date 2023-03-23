@@ -18,6 +18,7 @@ const sendEmailCompany = async (
     tls: {
       rejectUnauthorized: false,
     },
+    from: process.env.EMAIL_USER,
   });
 
   //Configure Options
