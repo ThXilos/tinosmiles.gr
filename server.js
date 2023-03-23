@@ -47,7 +47,38 @@ app.post("/api/sendemail", async (req, res) => {
     const reply_to = process.env.EMAIL_USER;
     const reply_to_customer = email;
     const subject_service = `Car Inquiry - ${pickupDate} to ${returnDate} `;
-    const message_service = `test message`;
+    const message_service = `
+	<html>
+	<head>
+	<title>Request from Tinos Miles contact form</title>
+	</head>
+	<body>
+	<h2>Request from: <strong>${name}</strong></h2>
+	<p>Pick-up <strong>${pickupDate}</strong>  || Drop-off <strong>${returnDate}</strong></p>
+	<p>Location <strong>${pickupLocation}</strong></p>
+	<p>Total days: <strong>${rentDays}</strong> </p>
+	<p>${
+    discountApplied ? "<strong>10% discount applies</strong>" : "No discount"
+  }</p>
+	<p>Final cost for low season at 40e/day : ${
+    discountApplied
+      ? `<span style=" text-decoration: line-through;">${lowSeason}</span> <strong>${
+          lowSeason * 0.9
+        }</strong>`
+      : `<strong>${lowSeason}</strong>`
+  }</p>
+	<p>Final cost for high season at 50e/day :  ${
+    discountApplied
+      ? `<span style=" text-decoration: line-through;">${highSeason}</span> <strong>${
+          highSeason * 0.9
+        }</strong>`
+      : `<strong>${highSeason}</strong>`
+  }</p>
+	</body>
+	</html>
+	`;
+    const subject = "Tinos Miles Car Rental Services | Automated Response";
+    const message = `this message is a test`;
 
     await sendEmailCustomer(subject, message, send_to, sent_from, reply_to);
     await sendEmailCompany(
