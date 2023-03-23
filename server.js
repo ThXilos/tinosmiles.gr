@@ -79,21 +79,24 @@ app.post("/api/sendemail", async (req, res) => {
 	`;
     const subject = "Tinos Miles Car Rental Services | Automated Response";
     const message = `
-	<!DOCTYPE html>
-<html>
+	<html>
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>My Email</title>
+	<title>Tinos Miles auto-reply</title>
 	<style>
 		body {
-			background-color: #f7f7f7;
+			background-color:#dfe3ee;
 			font-family: Arial, sans-serif;
 			font-size: 16px;
 			line-height: 1.5;
 			padding: 20px;
 			margin: 0;
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
 		}
+    
 		h1 {
 			color: #007bff;
 			font-size: 24px;
@@ -111,17 +114,89 @@ app.post("/api/sendemail", async (req, res) => {
 		li {
 			margin-bottom: 5px;
 		}
+    
+    .container{
+      background-color:#fff;
+      height:90%;
+      width:500px;
+      border-radius:9px;
+      overflow:hidden;
+    }
+    
+    .logo-container{
+      background-color:#6ac1b7;
+      padding: 1rem 0;
+    }
+    
+    .inquiry-container{
+     padding:0 1rem;
+    }
+    
+    .guide-container{
+      align-text:center;
+      padding:0 1rem;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+    }
+    
+    .info-container{
+      display:flex;
+      align-items:center;
+      padding: 0 1rem;
+      gap:1rem;
+    }
+    
+    .info-icon{
+      width:50px;
+    }
+    
+    .divider{
+      
+    }
+    
 	</style>
 </head>
 <body>
-	<h1>Hello!</h1>
-	<p>This is a test email with HTML formatting.</p>
-	<ul>
-		<li>Item 1</li>
-		<li>Item 2</li>
-		<li>Item 3</li>
-	</ul>
-	<p>Thank you for reading.</p>
+  <div class="container">
+    <div class="logo-container">
+      <img src="https://res.cloudinary.com/dtekdjcan/image/upload/v1677076389/tinosmiles.gr/tinosmiles_logo_site_400x100_lwb09n.png" alt="tinos miles logo" />
+    </div>
+    <div class="inquiry-container">
+      <p>Hi, [customer_name]</p>
+      <ul>
+        <li>Pick up location</li>
+        <li>Pick up date & time</li>
+        <li>Drop off date & time</li>
+      </ul>
+      <p>We will get back to you as soon as posible.</p>
+    </div>
+    <div class="image-container">
+      <img src="https://res.cloudinary.com/dtekdjcan/image/upload/v1678453185/tinosmiles.gr/Start-Exploring_kfvklb.webp" alt="a car parked on a clif overlooking a beach" />
+    </div>
+    <div class="guide-container">
+      <p>In the meantime click the button below to check out a our guide from Tinos with our tips on what to see and where to go.</p>
+      <p class="btn">Link to guide</p>
+    </div>
+    <div>
+      <div class="info-container">
+         <img src="https://res.cloudinary.com/dtekdjcan/image/upload/v1677076389/tinosmiles.gr/info_kwvubh.png" alt="an icon of an exclamation meaning information" class="info-icon" />
+        <div>
+          <p>how to icon 	How to get to Tinos</p>
+          <p>how to icon 	How to get to Tinos
+Get some information on how to travel to Tinos, accomendation prices, car rental prices, tickets and more. </p>
+        </div>
+      </div>
+      <div class="info-container">
+         <img src="https://res.cloudinary.com/dtekdjcan/image/upload/v1677076389/tinosmiles.gr/covid_info_zjr4zv.png" alt="an icon of a exclamation meaning warning" class="info-icon"/>
+        <div>
+          <p>Our responce to the covid-19</p>
+          <p>Find out more on how we take measures to assure your safety and those around you. </p>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>`;
 
