@@ -85,18 +85,7 @@ app.post("/api/sendemail", async (req, res) => {
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Tinos Miles auto-reply</title>
 	<style>
-		body {
-			background-color:#dfe3ee;
-			font-family: Arial, sans-serif;
-			font-size: 16px;
-			line-height: 1.5;
-			padding: 20px;
-			margin: 0;
-      display:flex;
-      justify-content:center;
-      align-items:flex-start;
-		}
-    
+	  
 		h1 {
 			color: #007bff;
 			font-size: 24px;
@@ -114,56 +103,28 @@ app.post("/api/sendemail", async (req, res) => {
 		li {
 			margin-bottom: 5px;
 		}
-    
-    .container{
-      background-color:#fff;
-      height:90%;
-      width:500px;
-      border-radius:9px;
-      overflow:hidden;
-    }
-    
-    .logo-container{
-      background-color:#6ac1b7;
-      padding: 1rem 0;
-    }
-    
-    .inquiry-container{
-     padding:0 1rem;
-    }
-    
-    .guide-container{
-      align-text:center;
-      padding:0 1rem;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      flex-direction:column;
-    }
-    
-    .info-container{
-      display:flex;
-      align-items:center;
-      padding: 0 1rem;
-      gap:1rem;
-    }
-    
-    .info-icon{
-      width:50px;
-    }
-    
-    .divider{
-      
-    }
-    
+     
 	</style>
 </head>
-<body>
-  <div class="container">
-    <div class="logo-container">
+<body style="background-color:#dfe3ee;
+			font-family: Arial, sans-serif;
+			font-size: 16px;
+			line-height: 1.5;
+			padding: 20px;
+			margin: 0;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;">
+  <div style="background-color:#fff;
+      width:500px;
+      border-radius:9px;
+      overflow:hidden;">
+    <div style=" background-color:#6ac1b7;
+      padding: 1rem 0;">
       <img src="https://res.cloudinary.com/dtekdjcan/image/upload/v1677076389/tinosmiles.gr/tinosmiles_logo_site_400x100_lwb09n.png" alt="tinos miles logo" />
     </div>
-    <div class="inquiry-container">
+    <div style="padding:0 1rem;">
       <p>Hi, [customer_name]</p>
       <ul>
         <li>Pick up location</li>
@@ -175,26 +136,49 @@ app.post("/api/sendemail", async (req, res) => {
     <div class="image-container">
       <img src="https://res.cloudinary.com/dtekdjcan/image/upload/v1678453185/tinosmiles.gr/Start-Exploring_kfvklb.webp" alt="a car parked on a clif overlooking a beach" />
     </div>
-    <div class="guide-container">
+    <div style="align-text:center;
+      padding:0 1rem;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;">
       <p>In the meantime click the button below to check out a our guide from Tinos with our tips on what to see and where to go.</p>
       <p class="btn">Link to guide</p>
     </div>
     <div>
-      <div class="info-container">
-         <img src="https://res.cloudinary.com/dtekdjcan/image/upload/v1677076389/tinosmiles.gr/info_kwvubh.png" alt="an icon of an exclamation meaning information" class="info-icon" />
+      <div style="display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 0 1rem;
+      gap:1rem;">
+         <img src="https://res.cloudinary.com/dtekdjcan/image/upload/v1677076389/tinosmiles.gr/info_kwvubh.png" alt="an icon of an exclamation meaning information" style="width:50px;
+      align-self:flex-start;"/>
         <div>
-          <p>how to icon 	How to get to Tinos</p>
-          <p>how to icon 	How to get to Tinos
-Get some information on how to travel to Tinos, accomendation prices, car rental prices, tickets and more. </p>
+          <p style="text-transform:capitalize;">How to get to Tinos</p>
+          <p>Get some information on how to travel to Tinos, accomendation prices, car rental prices, tickets and more. </p>
         </div>
       </div>
-      <div class="info-container">
-         <img src="https://res.cloudinary.com/dtekdjcan/image/upload/v1677076389/tinosmiles.gr/covid_info_zjr4zv.png" alt="an icon of a exclamation meaning warning" class="info-icon"/>
+      <div style="display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 0 1rem;
+      gap:1rem;">
+         <img src="https://res.cloudinary.com/dtekdjcan/image/upload/v1677076389/tinosmiles.gr/covid_info_zjr4zv.png" alt="an icon of a exclamation meaning warning" style=" width:50px;
+      align-self:flex-start;"/>
         <div>
-          <p>Our responce to the covid-19</p>
+          <p style="text-transform:capitalize;">Our responce to the covid-19</p>
           <p>Find out more on how we take measures to assure your safety and those around you. </p>
         </div>
       </div>
+      <div>
+        <p>Have a question? <span>contact@tinosmiles.gr</span></p>
+      </div>
+    </div>
+  </div>
+  <div class="footer-container">
+    <div class="social-icons">
+      <p>facebook</p>
+      <p>instagram</p>
     </div>
   </div>
 </body>
