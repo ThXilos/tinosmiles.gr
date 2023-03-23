@@ -78,7 +78,52 @@ app.post("/api/sendemail", async (req, res) => {
 	</html>
 	`;
     const subject = "Tinos Miles Car Rental Services | Automated Response";
-    const message = `this message is a test`;
+    const message = `
+	<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>My Email</title>
+	<style>
+		body {
+			background-color: #f7f7f7;
+			font-family: Arial, sans-serif;
+			font-size: 16px;
+			line-height: 1.5;
+			padding: 20px;
+			margin: 0;
+		}
+		h1 {
+			color: #007bff;
+			font-size: 24px;
+			margin-bottom: 20px;
+		}
+		p {
+			color: #333;
+			margin-bottom: 10px;
+		}
+		ul {
+			color: #333;
+			margin-bottom: 10px;
+			padding-left: 20px;
+		}
+		li {
+			margin-bottom: 5px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Hello!</h1>
+	<p>This is a test email with HTML formatting.</p>
+	<ul>
+		<li>Item 1</li>
+		<li>Item 2</li>
+		<li>Item 3</li>
+	</ul>
+	<p>Thank you for reading.</p>
+</body>
+</html>`;
 
     await sendEmailCustomer(subject, message, send_to, sent_from, reply_to);
     await sendEmailCompany(
