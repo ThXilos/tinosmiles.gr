@@ -24,7 +24,11 @@ app.get("/", (req, res) => {
   res.send(`TinosMiles Service Running ${new Date()}`);
 });
 
-app.post("/api/sendemail", cors(corsOptions), async (req, res) => {
+app.post("/api/sendemail", async (req, res) => {
+  const origin = req.get("Origin");
+  if (origin !== corsOptions.origin) {
+    return res.status(403).send("Forbidden");
+  }
   const {
     name,
     email,
