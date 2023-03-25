@@ -7,11 +7,16 @@ const sendEmailCustomer = require("./utils/sendEmailCustomer.js");
 const sendEmailCompany = require("./utils/sendEmailCompany.js");
 const app = express();
 
+const corsOptions = {
+  origin: "https://tinosmiles.gr",
+  optionSuccessStatus: 200,
+};
+
 //Midleware
 
 app.use(express.json());
 app.use(bodyParser.json());
-app.use(cors());
+app.use(cors(corsOptions));
 
 //create route
 
@@ -19,7 +24,7 @@ app.get("/", (req, res) => {
   res.send(`TinosMiles Service Running ${new Date()}`);
 });
 
-app.post("/api/sendemail", async (req, res) => {
+app.post("/api/sendemail", cors(corsOptions), async (req, res) => {
   const {
     name,
     email,
