@@ -87,8 +87,7 @@ app.post("/api/sendemail", async (req, res) => {
 	</html>
 	`;
     const subject = "Tinos Miles Car Rental Services | Automated Response";
-    const message = `<!DOCTYPE html>
-<html>
+    const message = `<html>
   <head>
     <title>Tinos Miles Car Rental Service</title>
   </head>
