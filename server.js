@@ -88,20 +88,35 @@ app.post("/api/sendemail", async (req, res) => {
 	`;
     const subject = "Tinos Miles Car Rental Services | Automated Response";
     const message = `
-	<html>
-	<head>
-	<title>Tinos Miles Car Rental Services/title>
-	</head>
-	<body>
-	<h2>Hi, <strong>${name}</strong></h2>
-	<p>than you for contacting us with the following inquiry:</p>
-	<p>Pick-up <strong>${pickupDate} at ${pickupTime}</strong>  || Drop-off <strong>${returnDate} at ${returnTime}</strong></p>
+	<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tinos Miles Car Rental Service</title>
+  </head>
+  <body style="background-color:#f7f7f7; font-family:Arial, sans-serif; font-size:16px; line-height:1.5; color:#333333;">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+      <tr>
+        <td align="center" bgcolor="#ffffff" style="border-radius:5px; box-shadow:0px 2px 5px rgba(0,0,0,0.1); padding:20px;">
+          <h1 style="font-size:28px; margin:0;">Tinos Miles Car Rental Service</h1>
+        </td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#ffffff" style="border-radius:5px; box-shadow:0px 2px 5px rgba(0,0,0,0.1); padding:20px;">
+          <p>Hello, ${name}</p>
+          <p>Thank you for contacting Tinos Miles with the following inquiry:</p>
+          <p>Pick-up <strong>${pickupDate}</strong> at <strong>${pickupTime}</strong>  || Drop-off <strong>${returnDate}</strong> at <strong>${returnTime}</strong></p>
 	<p>Location <strong>${pickupLocation}</strong></p>
-	<p>Total days: <strong>${rentDays}</strong> </p>
-	<p>We wiil get back to you, as soon as posible</p>
-	</body>
-	</html>
-	
+          <p>Total days: <strong>${rentDays}</strong> </p>
+        </td>
+      </tr>
+      <tr>
+        <td align="center" bgcolor="#ffffff" style="border-radius:5px; box-shadow:0px 2px 5px rgba(0,0,0,0.1); padding:20px;">
+          <p>&copy; Tinos Miles 2023</p>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
 	`;
 
     await sendEmailCustomer(subject, message, send_to, sent_from, reply_to);
