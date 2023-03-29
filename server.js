@@ -119,15 +119,11 @@ app.post("/api/sendemail", async (req, res) => {
       <tr>
         <td style="width:50%; vertical-align:top; padding:10px;text-align:center;">
           <!-- Left column content goes here -->
-          <a href="https://www.instagram.com/tinosmiles/" target="_blank">
            <img style="max-width:50px;" src="https://res.cloudinary.com/dtekdjcan/image/upload/v1677243765/tinosmiles.gr/instagram_ccav7w.png"/> 
-          </a>
         </td>
         <td style="width:50%; vertical-align:top; padding:10px;text-align:center;">
           <!-- Right column content goes here -->
-          <a href="https://www.facebook.com/tinossmiles/" target="_blank">
            <img style="max-width:50px;" src="https://res.cloudinary.com/dtekdjcan/image/upload/v1677243765/tinosmiles.gr/facebook_b5b6hr.png"/>   
-          </a>
         </td>
       </tr>
     </table>
