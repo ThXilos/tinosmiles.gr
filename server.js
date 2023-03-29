@@ -63,7 +63,7 @@ app.post("/api/sendemail", async (req, res) => {
 	</head>
 	<body>
 	<h2>Request from: <strong>${name}</strong></h2>
-	<p>Pick-up <strong>${pickupDate}</strong>  || Drop-off <strong>${returnDate}</strong></p>
+	<p>Pick-up <strong>${pickupDate} at ${pickupTime}</strong>  || Drop-off <strong>${returnDate} at ${returnTime}</strong></p>
 	<p>Location <strong>${pickupLocation}</strong></p>
 	<p>Total days: <strong>${rentDays}</strong> </p>
 	<p>${
@@ -87,7 +87,9 @@ app.post("/api/sendemail", async (req, res) => {
 	</html>
 	`;
     const subject = "Tinos Miles Car Rental Services | Automated Response";
-    const message = `<html xmlns="http://www.w3.org/1999/xhtml">
+    const message = `
+	
+	<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0;">
@@ -140,20 +142,6 @@ width="560" style="border-collapse: collapse; border-spacing: 0; padding: 0;widt
 	bgcolor="#FFFFFF"
 	width="560" style="border-collapse: collapse; border-spacing: 0; padding: 0; width: inherit;
 	max-width: 560px;" class="container">
-
-
-  <tr>
-    <td style="border-radius:10px 10px 0 0;background-color:#6ac1b7;padding:5px 0;">
-            <a target="_blank" style="text-decoration: none;"
-				href="https://www.tinosmiles.gr"><img border="0" vspace="0" hspace="0"
-				src="https://res.cloudinary.com/dtekdjcan/image/upload/v1677076389/tinosmiles.gr/tinosmiles_logo_site_400x100_lwb09n.png"
-				width="400" height="100"
-				alt="tinos miles logo" title="Logo" style="
-				color: #000000;
-				font-size: 10px; margin: 0; padding: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; border: none; display: block;" /></a>
-
-    </td>
-  </tr>
 	<tr>
 		<td align="left" valign="top" style="border-collapse: collapse; border-spacing: 0; margin: 0;padding: 0; padding-left: 6.25%; padding-right: 6.25%; width: 87.5%; font-size: 24px; font-weight: bold; line-height: 130%;
 			padding-top: 25px;
@@ -193,17 +181,7 @@ width="560" style="border-collapse: collapse; border-spacing: 0; padding: 0;widt
 		</td>
 	</tr>
 
-	<tr>
-		<td align="center" valign="top" style="border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0;
-			padding-top: 20px;" class="hero"><a target="_blank" style="text-decoration: none;"
-			href="https://tinosmiles.gr"><img border="0" vspace="0" hspace="0"
-			src="https://res.cloudinary.com/dtekdjcan/image/upload/v1678453185/tinosmiles.gr/Start-Exploring_kfvklb.webp"
-			alt="Please enable images to view this content" title="Hero Image"
-			width="560" style="
-			width: 100%;
-			max-width: 560px;
-			color: #000000; font-size: 13px; margin: 0; padding: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; border: none; display: block;"/></a></td>
-	</tr>
+
 
 	<!-- PARAGRAPH -->
 	<!-- Set text color and font family ("sans-serif" or "Georgia, serif"). Duplicate all text styles in links, including line-height -->
@@ -217,14 +195,12 @@ width="560" style="border-collapse: collapse; border-spacing: 0; padding: 0;widt
 		</td>
 	</tr>
 
-	<!-- BUTTON -->
-	<!-- Set button background color at TD, link/text color at A and TD, font family ("sans-serif" or "Georgia, serif") at TD. For verification codes add "letter-spacing: 5px;". Link format: http://domain.com/?utm_source={{Campaign-Source}}&utm_medium=email&utm_content={{Button-Name}}&utm_campaign={{Campaign-Name}} -->
 	<tr>
 		<td align="center" valign="top" style="border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0; padding-left: 6.25%; padding-right: 6.25%; width: 87.5%;
 			padding-top: 25px;
 			padding-bottom: 5px;" class="button"><a
 			href="#" target="_blank" style="text-decoration: none;">
-				<table border="0" cellpadding="0" cellspacing="0" align="center" style="max-width: 240px; min-width: 120px; border-collapse: collapse; border-spacing: 0; padding: 0;"><tr><td align="center" valign="middle" style="padding: 12px 24px; margin: 0; text-decoration: underline; border-collapse: collapse; border-spacing: 0; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px;"
+				<table border="0" cellpadding="0" cellspacing="0" align="center" style="max-width: 240px; min-width: 120px; border-collapse: collapse; border-spacing: 0; padding: 0;"><tr><td align="center" valign="middle" style="padding: 12px 24px; margin: 0; border-collapse: collapse; border-spacing: 0; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; -khtml-border-radius: 4px;"
 					bgcolor="#E9703E"><a target="_blank" style="text-decoration: none;
 					color: #FFFFFF; font-family: sans-serif; font-size: 17px; font-weight: 400; line-height: 120%;"
 					href="https://tinosmiles.gr/tinos-island-guide">
@@ -234,8 +210,6 @@ width="560" style="border-collapse: collapse; border-spacing: 0; padding: 0;widt
 		</td>
 	</tr>
 
-	<!-- LINE -->
-	<!-- Set line color -->
 	<tr>	
 		<td align="center" valign="top" style="border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0; padding-left: 6.25%; padding-right: 6.25%; width: 87.5%;
 			padding-top: 25px;" class="line"><hr
@@ -243,15 +217,11 @@ width="560" style="border-collapse: collapse; border-spacing: 0; padding: 0;widt
 		</td>
 	</tr>
 
-	<!-- LIST -->
 	<tr>
 		<td align="center" valign="top" style="border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0; padding-left: 6.25%; padding-right: 6.25%;" class="list-item"><table align="center" border="0" cellspacing="0" cellpadding="0" style="width: inherit; margin: 0; padding: 0; border-collapse: collapse; border-spacing: 0;">
 			
-			<!-- LIST ITEM -->
+		
 			<tr>
-
-				<!-- LIST ITEM IMAGE -->
-				<!-- Image text color should be opposite to background color. Set your url, image src, alt and title. Alt text should fit the image size. Real image size should be x2 -->
 				<td align="left" valign="top" style="border-collapse: collapse; border-spacing: 0;
 					padding-top: 30px;
 					padding-right: 20px;"><img
@@ -261,8 +231,7 @@ width="560" style="border-collapse: collapse; border-spacing: 0; padding: 0;widt
 					alt="how to icon" title="Info Tinos Island"
 					width="50" height="50"></td>
 
-				<!-- LIST ITEM TEXT -->
-				<!-- Set text color and font family ("sans-serif" or "Georgia, serif"). Duplicate all text styles in links, including line-height -->
+				
 				<td align="left" valign="top" style="font-size: 17px; font-weight: 400; line-height: 160%; border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0;
 					padding-top: 25px;
 					color: #000000;
@@ -273,11 +242,8 @@ width="560" style="border-collapse: collapse; border-spacing: 0; padding: 0;widt
 
 			</tr>
 
-			<!-- LIST ITEM -->
+		
 			<tr>
-
-				<!-- LIST ITEM IMAGE -->
-				<!-- Image text color should be opposite to background color. Set your url, image src, alt and title. Alt text should fit the image size. Real image size should be x2 -->
 				<td align="left" valign="top" style="border-collapse: collapse; border-spacing: 0;
 					padding-top: 30px;
 					padding-right: 20px;"><img
@@ -287,8 +253,7 @@ width="560" style="border-collapse: collapse; border-spacing: 0; padding: 0;widt
 					alt="covid-19 responce" title="covid-19 responce"
 					width="50" height="50"></td>
 
-				<!-- LIST ITEM TEXT -->
-				<!-- Set text color and font family ("sans-serif" or "Georgia, serif"). Duplicate all text styles in links, including line-height -->
+
 				<td align="left" valign="top" style="font-size: 17px; font-weight: 400; line-height: 160%; border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0;
 					padding-top: 25px;
 					color: #000000;
@@ -302,8 +267,7 @@ width="560" style="border-collapse: collapse; border-spacing: 0; padding: 0;widt
 		</table></td>
 	</tr>
 
-	<!-- LINE -->
-	<!-- Set line color -->
+
 	<tr>
 		<td align="center" valign="top" style="border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0; padding-left: 6.25%; padding-right: 6.25%; width: 87.5%;
 			padding-top: 25px;" class="line"><hr
@@ -311,8 +275,7 @@ width="560" style="border-collapse: collapse; border-spacing: 0; padding: 0;widt
 		</td>
 	</tr>
 
-	<!-- PARAGRAPH -->
-	<!-- Set text color and font family ("sans-serif" or "Georgia, serif"). Duplicate all text styles in links, including line-height -->
+
 	<tr>
 		<td align="center" valign="top" style="border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0; padding-left: 6.25%; padding-right: 6.25%; width: 87.5%; font-size: 17px; font-weight: 400; line-height: 160%;
 			padding-top: 20px;
@@ -323,23 +286,20 @@ width="560" style="border-collapse: collapse; border-spacing: 0; padding: 0;widt
 		</td>
 	</tr>
 
-<!-- End of WRAPPER -->
+
 </table>
 
-<!-- WRAPPER -->
-<!-- Set wrapper width (twice) -->
+
 <table border="0" cellpadding="0" cellspacing="0" align="center"
 	width="560" style="border-collapse: collapse; border-spacing: 0; padding: 0; width: inherit;
 	max-width: 560px;" class="wrapper">
 
-	<!-- SOCIAL NETWORKS -->
-	<!-- Image text color should be opposite to background color. Set your url, image src, alt and title. Alt text should fit the image size. Real image size should be x2 -->
 	<tr>
     		<td align="center" valign="top" style="border-collapse: collapse; border-spacing: 0; margin: 0; padding: 0; padding-left: 6.25%; padding-right: 6.25%; width: 87.5%;
 			padding-top: 25px;" class="social-icons"><table
 			width="256" border="0" cellpadding="0" cellspacing="0" align="center" style="border-collapse: collapse; border-spacing: 0; padding: 0;">
 			<tr>
-				<!-- ICON 1 -->
+			
 				<td align="center" valign="middle" style="margin: 0; padding: 0; padding-left: 10px; padding-right: 10px; border-collapse: collapse; border-spacing: 0;"><a target="_blank"
 					href="https://www.facebook.com/tinossmiles/"
 				style="text-decoration: none;"><img border="0" vspace="0" hspace="0" style="padding: 0; margin: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; border: none; display: inline-block;
@@ -347,7 +307,7 @@ width="560" style="border-collapse: collapse; border-spacing: 0; padding: 0;widt
 					alt="F" title="Facebook"
 					width="44" height="44"
 					src="https://res.cloudinary.com/dtekdjcan/image/upload/v1677243765/tinosmiles.gr/facebook_b5b6hr.png"></a></td>
-				<!-- ICON 4 -->
+		
 				<td align="center" valign="middle" style="margin: 0; padding: 0; padding-left: 10px; padding-right: 10px; border-collapse: collapse; border-spacing: 0;"><a target="_blank"
 					href="https://www.instagram.com/tinosmiles/"
 				style="text-decoration: none;"><img border="0" vspace="0" hspace="0" style="padding: 0; margin: 0; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; border: none; display: inline-block;
