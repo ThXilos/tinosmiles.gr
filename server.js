@@ -87,14 +87,13 @@ app.post("/api/sendemail", async (req, res) => {
 	</html>
 	`;
     const subject = "Tinos Miles Car Rental Services | Automated Response";
-    const message = `
-	<!DOCTYPE html>
+    const message = `<!DOCTYPE html>
 <html>
   <head>
     <title>Tinos Miles Car Rental Service</title>
   </head>
   <body style="background-color:#f7f7f7; font-family:Arial, sans-serif; font-size:16px; line-height:1.5; color:#333333;">
-    <table align="center" border="0" cellpadding="0" cellspacing="0" width="600">
+    <table align="center" border="0" cellpadding="0" cellspacing="0" width="100%" style="max-width:600px; margin:0 auto;">
       <tr>
         <td align="center" bgcolor="#ffffff" style="border-radius:5px; box-shadow:0px 2px 5px rgba(0,0,0,0.1); padding:20px;">
           <h1 style="font-size:28px; margin:0;">Tinos Miles Car Rental Service</h1>
@@ -102,22 +101,22 @@ app.post("/api/sendemail", async (req, res) => {
       </tr>
       <tr>
         <td align="center" bgcolor="#ffffff" style="border-radius:5px; box-shadow:0px 2px 5px rgba(0,0,0,0.1); padding:20px;">
-          <p>Hello, ${name}</p>
-          <p>Thank you for contacting Tinos Miles with the following inquiry:</p>
-          <p>Pick-up <strong>${pickupDate}</strong> at <strong>${pickupTime}</strong>  || Drop-off <strong>${returnDate}</strong> at <strong>${returnTime}</strong></p>
-	<p>Location <strong>${pickupLocation}</strong></p>
-          <p>Total days: <strong>${rentDays}</strong> </p>
+          <p style="margin:0 0 20px 0;">Hello, ${name}</p>
+          <p style="margin:0 0 20px 0;">Thank you for contacting Tinos Miles with the following inquiry:</p>
+          <p style="margin:0 0 10px 0;">Pick-up <strong>${pickupDate}</strong> at <strong>${pickupTime}</strong></p>
+          <p style="margin:0 0 10px 0;">Drop-off <strong>${returnDate}</strong> at <strong>${returnTime}</strong></p>
+          <p style="margin:0 0 20px 0;">Location <strong>${pickupLocation}</strong></p>
+          <p style="margin:0;">Total days: <strong>${rentDays}</strong></p>
         </td>
       </tr>
       <tr>
         <td align="center" bgcolor="#ffffff" style="border-radius:5px; box-shadow:0px 2px 5px rgba(0,0,0,0.1); padding:20px;">
-          <p>&copy; Tinos Miles 2023</p>
+          <p style="margin:0; font-size:14px; color:#777777;">&copy; Tinos Miles 2023</p>
         </td>
       </tr>
     </table>
   </body>
-</html>
-	`;
+</html>`;
 
     await sendEmailCustomer(subject, message, send_to, sent_from, reply_to);
     await sendEmailCompany(
